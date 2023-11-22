@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<title>Mapbox scrollytelling</title>
+<meta charset='utf-8' />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+   
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;800&display=swap" rel="stylesheet">
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <head>
+	<style>
+		 body {
+            margin:0; 
+            padding:0; 
+            font-family: 'Merriweather', sans-serif;
+            overflow-x:hidden;
+        overflow-y:auto;}
+       
+         #map {
+           width:100vw;
+           height:100vh;
+           position: fixed;
+           top: 0;
+        } 
+
+         
+        section {
+            color:white;
+            height: auto;
+            background: rgba(4,2,12,0.7);
+            opacity: 0.5;
+            font-size: 15px;
+            padding:  0.7vw 1.5vw;
+            line-height: 25px;
+            border-radius: 10px;
+            pointer-events:all!important;
+            
+        }
+
+        section.active {
+            opacity: 1;
+        }
+
+        section:last-child {
+            margin-bottom: 350px;
+        }
+    
+    .space{
+    margin:0;
+    height:130vh;
+    width:0vw;
+    pointer-events:none;}
+             
+        
+
+
+        #card {
+            
+            right:0;
+            margin-right:3.5vw;
+            width: 34.5vw;
+            position: absolute;
+            opacity:1;
+            pointer-events:none;
+            color: white;
+            font-family: 'Merriweather', cursive;
+        }
+        
+
+p{font-size:16px;line-height:25px;}
+
+
+        h3 {
+            color:white;
+            font-size: 22px;
+            text-align: left;
+            font-family: 'Merriweather', cursive;
+            }
+
+.popup .mapboxgl-popup-content {
+        background-color: rgba(4,2,12,0.7);
+        color: white;margin-top: 15px;
+}
+
+.mapboxgl-popup-tip {
+  display:none;
+}
+
+</style>
+
+</head>
+<body>
+
+
+<div id='map'></div>
+	
+<div id='card'>
+
+        <section id='ch1' class='active' style="opacity:0"></section>
+
+    <div class="space"></div>
+
+        <section id='ch2'> 
+            <h3>Chapter 1 title</h3>
+            <p>Chapter 1 text</p>
+        </section>
+
+    <div class="space"></div>
+        
+        <section id='ch3'>
+            <h3>Chapter 2 title</h3>
+            <p>Chapter 2 text</p>
+        </section>
+
+    <div class="space"></div>
+        
+        <section id='ch4'>
+            <h3>Chapter 3 title</h3>
+            <p>Chapter 3 text</p>
+        </section>
+
+    <div class="space"></div>
+
+        <section id='ch5'>
+            <h3>Chapter 4 title</h3>
+            <p>Chapter 4 text</p>
+        </section>
+
+    <div class="space"></div>
+
+        <section id='ch6'>
+            <h3>Chapter 5 title</h3>
+            <p>Chapter 5 text</p>
+        </section>
+
+    <div class="space"></div>
+
+        <section id='ch7'>
+            <h3>Chapter 6 title</h3>
+            <p>Chapter 6 text</p>
+        </section>
+
+    <div class="space"></div>
+
+        <section id='ch8'>
+            <h3>Chapter 7 title</h3>
+            <p>Chapter 7 text</p>
+        </section>
+
+</div>
+  
+
+	 <script>
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYXRsbyIsImEiOiJjam5mdDVldmkwbTJ6M3BwNW13ZXhuYXM4In0.gikvkhPkud0GJy1FxG6-Zg';
+
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/atlo/cloyadclq001901quh2pw59vy',
+    projection: 'globe',
+     center: [19.42877, 47.15218],
+zoom: 6.78,
+pitch: 0.00,
+bearing: 0.00
+  });
+
+  map.boxZoom.disable();
+map.scrollZoom.disable();
+map.keyboard.disable();
+map.doubleClickZoom.disable();
+map.dragPan.disable();
+map.dragRotate.disable();
+map.touchZoomRotate.disable();
+        map.getCanvas().style.cursor = 'default';
+
+          var popup = new mapboxgl.Popup({ className: "popup",
+    closeButton: false,
+    closeOnClick: false,
+    offset: [0, -5]
+  });
+
+
+        var chapters = {
+            'ch1': {
+              
+center: [19.42877, 47.15218],
+zoom: 6.78
+            },
+            'ch2': {
+              
+center: [19.10268, 47.48232],
+zoom: 10.33
+            },
+            'ch3': {
+center: [17.74353, 46.85703],
+zoom: 9.50
+            },
+            'ch4': {
+center: [16.77781, 47.78130],
+zoom: 9.97
+            },
+            'ch5': {
+center: [-3.18421, 55.95086],
+zoom: 12.55
+            },
+            'ch6': {
+    center: [12.45318, 41.90336],
+zoom: 15.38
+            },
+            'ch7': {
+    center: [12.45318, 41.90336],
+zoom: 15.38
+            },
+            'ch8': {
+    center: [12.45318, 41.90336],
+zoom: 15.38
+            }
+
+        }; // On every scroll event, check which element is on screen
+        window.onscroll = function () {
+            var chapterNames = Object.keys(chapters);
+            for (var i = 0; i < chapterNames.length; i++) {
+                var chapterName = chapterNames[i];
+                if (isElementOnScreen(chapterName)) {
+                    setActiveChapter(chapterName);
+                    break;
+                }
+            }
+        };
+
+map.on('style.load', function () {
+
+	
+
+map.addSource('points-03jsom', {
+type: 'vector',
+url: 'mapbox://atlo.73czrhz4'
+});
+map.addLayer({
+'id': 'points-03jsom',
+'type': 'circle',
+'source': 'points-03jsom',
+'source-layer': 'points-03jsom',
+'layout': {
+     "visibility": "visible"
+},
+'paint': {
+"circle-color": "#ff0000",
+            "circle-opacity": 0,
+            "circle-radius":5,
+          }
+});
+
+});
+
+map.on('mousemove', 'points-03jsom', function(e) {
+  map.getCanvas().style.cursor = 'pointer';
+  
+   
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['points-03jsom'] // replace this with the name of the layer
+  });
+
+ if (!features.length) {
+    return;
+  }
+
+  var props = features[0].properties;
+
+        var state = features[0].state;
+  
+  var feature = features[0];
+            popup.setLngLat(e.lngLat)
+                .setHTML('<span style="font-weight:bold; font-family:Merriweather">Id: </span><span style="font-family:Merriweather">' + feature.properties.id + '</span>')
+                .addTo(map);
+
+        });
+
+
+        // Change it back to a pointer when it leaves.
+map.on('mouseleave', 'points-03jsom', function () {
+map.getCanvas().style.cursor = 'default';
+popup.remove();
+}); 
+
+
+        var activeChapterName = 'ch1';
+        function setActiveChapter(chapterName) {
+         
+            if (chapterName === activeChapterName) return;
+            if (chapterName === "ch1") {
+
+            	} else if (chapterName === "ch2") {
+
+                } else if (chapterName === "ch3") {
+
+                } else if (chapterName === "ch4") {
+
+                } else if (chapterName === "ch5") {
+
+                } else if (chapterName === "ch6") {
+
+map.setPaintProperty('points-03jsom', 'circle-opacity',0);
+
+                } else if (chapterName === "ch7") {
+
+map.setPaintProperty('points-03jsom', 'circle-opacity',1);
+
+map.setFilter('points-03jsom', null);
+
+
+} else if (chapterName === "ch8") {
+
+map.setFilter('points-03jsom', [
+  "all",
+  [
+    "match",
+    ["get", "id"],
+    1,
+    true,
+    false
+  ]
+]);
+
+			} 
+            map.flyTo(chapters[chapterName]);
+
+            document.getElementById(chapterName).setAttribute('class', 'active');
+            document.getElementById(activeChapterName).setAttribute('class', '');
+
+            activeChapterName = chapterName;
+        }
+        function isElementOnScreen(id) {
+            var element = document.getElementById(id);
+            var bounds = element.getBoundingClientRect();
+            return bounds.top < window.innerHeight && bounds.bottom > 0;
+
+        } 
+  </script>
+
+</body>
+</html>
