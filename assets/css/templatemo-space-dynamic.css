@@ -831,6 +831,14 @@ Banner Style
 --------------------------------------------- 
 */
 
+#rcorners1 {
+  border-radius: 25px;
+  background: #FBF0E0;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
 .layer {
   background-color: rgba(249, 249, 236, 0.7);
   top: 0;
@@ -841,7 +849,7 @@ Banner Style
 
 .main-banner {
   background-repeat: no-repeat;
-  background-image: url(../images/bgEdin.png);
+  background-image: url(../images/congbg.png);
   background-position: center center;
   background-size: cover;
   padding: 226px 0px 120px 0px;
@@ -1000,6 +1008,7 @@ Services Style
 */
 
 .our-services {
+  background-image: url(../images/congbg.png);
   margin-top: 0px;
   padding-top: 120px;
 }
