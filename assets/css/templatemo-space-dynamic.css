@@ -880,12 +880,24 @@ Banner Style
   /* margin-top: 120px; */
 }
 
+.safety-bg{
+  background-repeat:repeat-y;
+  background-image: url(../images/bgsafe.png);
+  opacity: 0.6;
+  background-position: center center;
+  background-size: cover;
+  padding: 10% 0px 0px 0px;
+  position: relative;
+  overflow: hidden;
+  /* margin-top: 120px; */
+}
+
 .main-banner{
   background-repeat: no-repeat;
   background-color: #FBF0E0;
   background-position: center center;
   background-size: cover;
-  padding: 226px 0px 120px 0px;
+  padding: 80px 0px 120px 0px;
   position: relative;
   overflow: hidden;
 }
@@ -1133,14 +1145,14 @@ Portfolio
 .our-portfolio {
   /* padding-top: 120px; */
   margin-top: 0px;
-  padding: 160px 0px 200px 0px;
+  padding: 120px 0px 200px 0px;
   background-color: #FBF0E0;
 }
 
 .our-portfolio .section-heading h2 {
   text-align: center;
   margin: 0px 90px 0px 90px;
-  margin-bottom: 120px;
+  margin-bottom: 150px;
   position: relative;
   z-index: 1;
 }
@@ -1162,7 +1174,7 @@ Portfolio
 }
 
 .our-portfolio .hidden-content {
-  background: rgb(255,77,30);
+  background: rgb(219, 175, 162);
   background: linear-gradient(105deg, rgba(255,77,30,1) 0%, rgba(255,44,109,1) 100%);
   padding: 30px;
   border-radius: 20px;
@@ -1515,6 +1527,11 @@ responsive
   .main-banner .left-content form,
   .main-banner .left-content form input {
     width: 100%!important;
+  }
+  .safety {
+    position: relative;
+    background-image: none;
+    padding: 0px;
   }
   #about {
     margin-top: 0px;
