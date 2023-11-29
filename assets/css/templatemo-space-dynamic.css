@@ -103,7 +103,7 @@ header, nav, section, article, aside, footer, hgroup {
 }
 
 html, body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Aclonica;
   font-weight: 400;
   background-color: #fff;
   -ms-text-size-adjust: 100%;
@@ -143,7 +143,7 @@ global styles
 html,
 body {
   background: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: Aclonica;
 }
 
 ::selection {
@@ -839,6 +839,27 @@ Banner Style
   height: 150px;
 }
 
+.speech-bubble {
+	position: relative;
+	background: #00aabb;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #00aabb;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
 .layer {
   background-color: rgba(249, 249, 236, 0.7);
   top: 0;
@@ -847,9 +868,21 @@ Banner Style
   height: 100%;
 }
 
-.main-banner {
+.cong-bg{
+  background-repeat:repeat-y;
+  background-image: url(../images/congbg1.png);
+  opacity: 0.6;
+  background-position: center center;
+  background-size: cover;
+  padding: 10% 0px 0px 0px;
+  position: relative;
+  overflow: hidden;
+  /* margin-top: 120px; */
+}
+
+.main-banner{
   background-repeat: no-repeat;
-  background-image: url(../images/congbg.png);
+  background-color: #FBF0E0;
   background-position: center center;
   background-size: cover;
   padding: 226px 0px 120px 0px;
@@ -965,7 +998,7 @@ About Us Style
 }
 
 .about-us {
-  background-image: url(../images/about-bg.png);
+  background-color: #FBF0E0;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1098,8 +1131,10 @@ Portfolio
 */
 
 .our-portfolio {
-  padding-top: 120px;
+  /* padding-top: 120px; */
   margin-top: 0px;
+  padding: 160px 0px 200px 0px;
+  background-color: #FBF0E0;
 }
 
 .our-portfolio .section-heading h2 {
@@ -1112,6 +1147,8 @@ Portfolio
 
 .our-portfolio .item {
   position: relative;
+  /* border-radius: 10px; */
+  background: var(--yellow2, #F2EDD0);
 }
 
 .our-portfolio .item:hover .hidden-content {
@@ -1167,12 +1204,15 @@ Portfolio
   top: 0px;
   position: relative;
   z-index: 3;
-  background-color: #fff;
+  background: var(--yellow2, #F2EDD0);
   text-align: center;
   padding: 50px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
   transition: all 0.5s;
+  /* width: 310px;*/
+  height: 370px; 
+  flex-shrink: 0;
 }
 
 .our-portfolio .showed-content img {
