@@ -1,39 +1,6 @@
-/* 
 
-TemplateMo 562 Space Dynamic
+@import url('https://fonts.googleapis.com/css2?family=Aclonica:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-https://templatemo.com/tm-562-space-dynamic
-
-*/
-
-/* ---------------------------------------------
-Table of contents
-------------------------------------------------
-01. font & reset css
-02. reset
-03. global styles
-04. header
-05. banner
-06. features
-07. testimonials
-08. contact
-09. footer
-10. preloader
-11. search
-12. portfolio
-
---------------------------------------------- */
-/* 
----------------------------------------------
-font & reset css
---------------------------------------------- 
-*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* 
----------------------------------------------
-reset
---------------------------------------------- 
-*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -44,14 +11,13 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
-/* clear fix */
+
 .grid:after {
   content: '';
   display: block;
   clear: both;
 }
 
-/* ---- .grid-item ---- */
 
 .grid-sizer,
 .grid-item {
@@ -135,11 +101,6 @@ img {
   overflow: hidden;
 }
 
-/* 
----------------------------------------------
-global styles
---------------------------------------------- 
-*/
 html,
 body {
   background: #fff;
@@ -179,7 +140,7 @@ body {
 .section-heading h2 {
   font-size: 30px;
   text-transform: capitalize;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 700;
   letter-spacing: 0.25px;
   position: relative;
@@ -189,11 +150,11 @@ body {
 
 .section-heading h2 em {
   font-style: normal;
-  color: #03a4ed;
+  color: #000;
 }
 
 .section-heading h2 span {
-  color: #fe3f40;
+  color: #000;
 }
 
 .main-blue-button a {
@@ -231,12 +192,6 @@ body {
   border-radius: 23px;
   letter-spacing: 0.25px;
 }
-
-/* 
----------------------------------------------
-header
---------------------------------------------- 
-*/
 
 .background-header {
   background-color: #fff!important;
@@ -723,11 +678,6 @@ header
   }
 }
 
-/* 
----------------------------------------------
-preloader
---------------------------------------------- 
-*/
 
 .js-preloader {
     position: fixed;
@@ -825,11 +775,13 @@ preloader
 
 
 
-/* 
----------------------------------------------
-Banner Style
---------------------------------------------- 
-*/
+.caption-small {
+  color: var(--blue, #8BA1BB);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
 #rcorners1 {
   border-radius: 25px;
@@ -906,6 +858,21 @@ Banner Style
   /* margin-top: 120px; */
 }
 
+.work-bg{
+  background-repeat:repeat-y;
+  background-image: url(../images/workbg.png);
+  width: 100%;
+  height: 850px;
+  opacity: 0.6;
+  background-position: center center;
+  background-size: cover;
+  padding: 10% 0px 0px 0px;
+  position: relative;
+  overflow: hidden;
+  /* margin-top: 120px; */
+}
+
+
 .money-prep{
   background-repeat:repeat-y;
   background-image: url(../images/money.png);
@@ -964,19 +931,22 @@ Banner Style
 }
 
 .main-banner .left-content h2 {
+  color: #000;
   font-size: 50px;
   font-weight: 700;
-  color: #2a2a2a;
+  /* color: #2a2a2a; */
   line-height: 72px;
 }
 
 .main-banner .left-content h2 em {
-  color: #03a4ed;
+  /* color: #03a4ed; */
+  color: #000;
   font-style: normal;
 }
 
 .main-banner .left-content h2 span {
-  color: #fe3f40;
+  /* color: #fe3f40; */
+  color: #000;
 }
 
 .main-banner .left-content p {
@@ -1376,139 +1346,6 @@ Blog
 .our-blog .right-list .right-image img {
   width: 250px;
   border-radius: 20px;
-}
-
-
-/* 
----------------------------------------------
-contact
---------------------------------------------- 
-*/
-
-.contact-us {
-  padding: 160px 0px;
-  background-image: url(../images/contact-bg.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-.contact-us .section-heading h2,
-.contact-us .section-heading h2 em,
-.contact-us .section-heading h2 span {
-  color: #fff;
-}
-
-.contact-us .section-heading p {
-  color: #fff;
-  margin-top: 30px;
-}
-
-.phone-info {
-  margin-top: 40px;
-}
-
-.phone-info h4 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.phone-info h4 span i {
-  width: 46px;
-  height: 46px;
-  display: inline-block;
-  text-align: center;
-  line-height: 46px;
-  background-color: #fff;
-  border-radius: 50%;
-  color: #ff3b2c;
-  font-size: 22px;
-  margin-left: 30px;
-  margin-right: 15px;
-}
-
-.phone-info h4 span a {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-form#contact .contact-dec {
-  position: absolute;
-  right: -166px;
-  bottom: 0;
-}
-
-form#contact .contact-dec img {
-  max-width: 178px;
-}
-
-form#contact {
-  margin-left: 30px;
-  position: relative;
-  background-color: #fff;
-  padding: 60px 30px;
-  border-radius: 20px;
-}
-
-form#contact input {
-  width: 100%;
-  height: 46px;
-  border-radius: 33px;
-  background-color: #d1f3ff;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  font-weight: 300;
-  color: #2a2a2a;
-  padding: 0px 20px;
-  margin-bottom: 20px;
-}
-
-form#contact input::placeholder {
-  color: #2a2a2a;
-}
-
-form#contact textarea {
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
-  max-height: 180px;
-  min-height: 140px;
-  height: 140px;
-  border-radius: 20px;
-  background-color: #d1f3ff;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  font-weight: 300;
-  color: #2a2a2a;
-  padding: 15px 20px;
-  margin-bottom: 20px;
-}
-
-form#contact textarea::placeholder {
-  color: #2a2a2a;
-}
-
-form#contact button {
-  display: inline-block;
-  background-color: #03a4ed;
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
-  text-transform: capitalize;
-  padding: 12px 25px;
-  border-radius: 23px;
-  letter-spacing: 0.25px;
-  border: none;
-  outline: none;
-  transition: all .3s;
-}
-
-form#contact button:hover {
-  background-color: #fe3f40;
 }
 
 
